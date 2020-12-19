@@ -1,0 +1,29 @@
+# Project: 1029‘
+# Makefile created by Dev-C++ 5.4.0
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = 1029.o $(RES)
+LINKOBJ  = 1029.o $(RES)
+LIBS     = -L"F:/dev C/Dev-cpp5.4.0及API帮助文档/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc -g3
+INCS     = -I"F:/dev C/Dev-cpp5.4.0及API帮助文档/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"F:/dev C/Dev-cpp5.4.0及API帮助文档/Dev-Cpp/MinGW32/include"
+BIN      = 1029‘.exe
+CXXFLAGS = $(CXXINCS)  -g3
+CFLAGS   = $(INCS)  -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+1029.o: 1029.cpp
+	$(CPP) -c 1029.cpp -o 1029.o $(CXXFLAGS)
